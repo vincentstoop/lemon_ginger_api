@@ -108,6 +108,13 @@ ActiveRecord::Schema.define(version: 20170228093905) do
     t.index ["user_id", "recipe_id"], name: "index_recipes_users_on_user_id_and_recipe_id"
   end
 
+  create_table "recipes_users", id: false, force: :cascade do |t|
+    t.integer "recipe_id", null: false
+    t.integer "user_id", null: false
+    t.index ["recipe_id", "user_id"], name: "index_recipes_users_on_recipe_id_and_user_id"
+    t.index ["user_id", "recipe_id"], name: "index_recipes_users_on_user_id_and_recipe_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
