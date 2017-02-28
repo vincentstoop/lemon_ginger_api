@@ -29,7 +29,7 @@ class Admin::RecipesController < Admin::BaseController
     recipe = Recipe.find(params[:id])
 
     if recipe.update(recipe_params)
-      redirect_to admin_recipes_path
+      redirect_to admin_recipes_path, notice: 'Recipe was updated.'
     else
       render :edit
     end
@@ -39,9 +39,9 @@ class Admin::RecipesController < Admin::BaseController
     recipe = Recipe.find(params[:id])
 
     if recipe.destroy
-      redirect_to admin_recipes_path
+      redirect_to admin_recipes_path, notice: 'Recipe was deleted.'
     else
-      redirect_to admin_recipes_path
+      redirect_to admin_recipes_path, alert: "Recipe couldn't be deleted."
     end
   end
 
