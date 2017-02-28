@@ -1,0 +1,30 @@
+<%= form_for [:admin, @recipe] do |f| %>
+
+  <div class="form-group">
+    <h2>Ingrediënten</h2>
+  </div>
+
+  <div>
+    <div class="form-group ingredients">
+      <div class="quantity">
+        <label>Hoeveelheid</label>
+          <div class="ingredient-qnt">
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+      </div>
+      <div class="ingredient">
+        <label>Naam ingrediënt</label>
+          <div class="ingredient-name">
+            <%= f.text_field :persons, class: "form-control" %>
+          </div>
+      </div>
+      <div class="optional">
+        <label>Optioneel?</label>
+        <%= f.check_box :persons, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <span>+ Add Ingredient</span>
+
+  <hr>
+<% end %>
