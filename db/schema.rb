@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 20170228090246) do
     t.string "subtitle"
     t.integer "cooking_time"
     t.text "intro"
+    t.bigint "admin_id"
+    t.boolean "featured"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "admin_id"
