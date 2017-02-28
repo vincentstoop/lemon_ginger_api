@@ -1,10 +1,10 @@
 class RecipesController < Admin::BaseController
   def index
-
+    @recipes = Recipe.all
   end
 
   def show
-
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
