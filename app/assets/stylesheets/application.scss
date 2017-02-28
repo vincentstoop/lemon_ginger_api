@@ -35,7 +35,8 @@ header {
   flex-direction: column;
 }
 
-header a {
+header h1 {
+  padding-left: 10px;
   color: $text-color;
 }
 
@@ -62,8 +63,10 @@ footer {
   padding: 1vh 0;
 }
 
-// Responsive
+// Links
 
+
+// Responsive
 
 @media screen and (min-width: $breakpoint-medium) {
   header {
@@ -81,16 +84,19 @@ footer {
     flex-direction: row;
   }
 
-  nav ul {
+  #recipes-container {
     display: flex;
-    font-size: 15pt;
-    padding: 3vh 1vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
   }
-  nav ul li:nth-child(even), nav ul li:nth-child(odd)  {
+
+  .recipe-item {
+    min-width: 45%;
+    min-height: 5vh;
     background-color: #fff;
-  }
-  nav li:nth-child(1) {
-    display: none;
+    margin-bottom: 1vh;
   }
 }
 
