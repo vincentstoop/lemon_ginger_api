@@ -1,6 +1,6 @@
 class CategoriesController < Admin::BaseController
   def index
-
+    @categories = Category.all
   end
 
   def create
