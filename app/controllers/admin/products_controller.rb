@@ -1,6 +1,6 @@
-class ProductsController < Admin::BaseController
+class Admin::ProductsController < Admin::BaseController
   def index
-
+    @products = Product.all
   end
 
   def create
