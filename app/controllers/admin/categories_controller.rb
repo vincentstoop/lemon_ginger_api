@@ -16,7 +16,7 @@ class Admin::CategoriesController < Admin::BaseController
   def update
     @category = Category.find(params[:id])
 
-    if @category.update
+    if @category.update(category_params)
       redirect_to admin_categories_path, notice: 'Category was updated.'
     else
       render :index, alert: "Category couldn't be updated."
