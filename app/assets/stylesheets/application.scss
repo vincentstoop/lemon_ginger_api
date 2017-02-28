@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #F1F4EF;
+  background-color: $bg-body;
   color: $text-color;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 1.18pt;
@@ -40,7 +40,17 @@ header a {
 
 main {
   flex: 1;
+}
 
+#banner {
+  min-height: 45vh;
+  background-color: $bg-banner;
+  display: flex;
+  flex-direction: column;
+}
+
+#banner p {
+  line-height: 150%;
 }
 
 footer {
@@ -64,6 +74,10 @@ footer {
   main {
     min-width: 940px;
     margin: 0 auto;
+  }
+
+  #banner {
+    flex-direction: row;
   }
 
   nav ul {
