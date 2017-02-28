@@ -1,11 +1,14 @@
 class PhotosController < ApplicationController
 
   def create
-    @photo = Photo.new
-    if @photo.save(photo_params)
-      redirect_to photo_path
-    end
+    @recipe = Recipe.find(params[:recipe_id])
+    @photo = @recipe.photos.new(photo_params)
+    @photo.recipe_id = params[:recipe_id]
+    @photo.save
+      redirect_to @photo.recipe
   end
+
+
 
   def destroy
     @photo = Photo.find(params[:id])
