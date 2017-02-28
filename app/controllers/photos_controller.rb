@@ -1,15 +1,30 @@
 class PhotosController < ApplicationController
 
+  def index
+
+  end
+
+# for testing the photo actions. 
+  def show
+    @photos = Photo.all
+  end
+
   def new
     @photo = Photo.new
   end
 
+  # def create
+  #   @recipe = Recipe.find(params[:recipe_id])
+  #   @photo = @recipe.photos.new(photo_params)
+  #   @photo.recipe_id = params[:recipe_id]
+  #   @photo.save
+  #     redirect_to @photo.recipe
+  # end
+
   def create
-    @recipe = Recipe.find(params[:recipe_id])
-    @photo = @recipe.photos.new(photo_params)
-    @photo.recipe_id = params[:recipe_id]
+    @photo = Photo.new(photo_params)
     @photo.save
-      redirect_to @photo.recipe
+    redirect_to @photo
   end
 
 

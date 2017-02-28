@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228093905) do
+ActiveRecord::Schema.define(version: 20170228095238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,14 +98,8 @@ ActiveRecord::Schema.define(version: 20170228093905) do
     t.bigint "admin_id"
     t.boolean "featured"
     t.boolean "published"
+    t.integer "persons"
     t.index ["admin_id"], name: "index_recipes_on_admin_id"
-  end
-
-  create_table "recipes_users", id: false, force: :cascade do |t|
-    t.integer "recipe_id", null: false
-    t.integer "user_id", null: false
-    t.index ["recipe_id", "user_id"], name: "index_recipes_users_on_recipe_id_and_user_id"
-    t.index ["user_id", "recipe_id"], name: "index_recipes_users_on_user_id_and_recipe_id"
   end
 
   create_table "recipes_users", id: false, force: :cascade do |t|
