@@ -1,7 +1,5 @@
 class RecipesController < ApplicationController
   def index
-  end
-
-  def show
+    @recipes = Recipe.all.where(published: TRUE, featured: TRUE).order(created_at: :desc).limit(5)
   end
 end
