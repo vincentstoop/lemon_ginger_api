@@ -1,4 +1,4 @@
-class CategoriesController < Admin::BaseController
+class ProductsController < Admin::BaseController
   def index
 
   end
@@ -7,7 +7,7 @@ class CategoriesController < Admin::BaseController
 
   end
 
-  def edit
+  def update
 
   end
 

@@ -7,7 +7,7 @@ class CategoriesController < Admin::BaseController
 
   end
 
-  def edit
+  def update
 
   end
 
