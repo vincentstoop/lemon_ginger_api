@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'recipes/index'
+  resources :recipes, only: [:index]
 
   namespace :api do
     resources :recipes, only: [:show, :index]
