@@ -1,0 +1,21 @@
+<%= form_for [:admin, @recipe] do |f| %>
+
+  <div class="form-group">
+    <h2>Bereidingsstappen</h2>
+  </div>
+
+  <div class="form-group">
+    <label>Naam stap</label>
+    <%= f.text_field :title, placeholder: "Recept naam", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Beschrijving</label>
+    <%= f.text_area :intro, placeholder: "Type hier een korte omschrijving...", class: "form-control intro" %>
+  </div>
+  <div class="form-group">
+    <label>Bereidingstijd</label>
+    <%= f.number_field :subtitle, class: "form-control" %>
+  </div>
+  <span>+ Add Cooking Step</span>
+
+<% end %>
