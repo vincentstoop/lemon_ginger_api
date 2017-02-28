@@ -1,3 +1,21 @@
-<h1>Recipes</h1>
-<h2>+ Add new recipe</h2>
-<%= render 'general' %>
+<div class="recipes-overview">
+  <div class="recipes-intro">
+    <h2>Recepten</h2>
+    <h3><%= link_to "+ Add new recipe", new_admin_recipe_path %></h3>
+  </div>
+
+  <div class="recipes-container">
+    <h2>Overzicht</h2>
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-card">
+        <h3><%=recipe.title %></h3>
+        <p><%= recipe.subtitle %></p>
+        <div class="recipe-actions">
+          <p><%= link_to "Edit", edit_admin_recipe_path(recipe) %></p>
+          <p><%= link_to "Delete", admin_recipe_path(recipe) %></p>
+          <p><%= link_to "Publish", admin_recipe_path(recipe) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
