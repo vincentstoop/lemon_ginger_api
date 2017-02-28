@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LemonGingerApi</title>
+    <title>Lemon & Ginger</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%=  stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>Lemon & Ginger</h1>
+      <%= render 'layouts/navigation' %>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      Footer
+    </footer>
+
   </body>
 </html>

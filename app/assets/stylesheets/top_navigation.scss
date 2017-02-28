@@ -1,0 +1,39 @@
+@import "variables";
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+  padding: 5px 5px;
+  min-height: 20px;
+}
+
+nav ul li:nth-child(odd) {
+  background-color: $bg-nav-odd;
+}
+
+nav ul li:nth-child(even) {
+  background-color: $bg-nav-even;
+}
+
+nav ul li:nth-child(1) {
+  background-color: $bg-nav-head;
+  color: #fff;
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  nav ul {
+    display: flex;
+    font-size: 15pt;
+    padding: 3vh 1vw;
+  }
+  nav ul li:nth-child(even), nav ul li:nth-child(odd)  {
+    background-color: #fff;
+  }
+  nav li:nth-child(1) {
+    display: none;
+  }
+  }

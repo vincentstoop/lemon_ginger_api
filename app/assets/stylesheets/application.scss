@@ -16,3 +16,73 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
+@import "top_navigation";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F1F4EF;
+  color: $text-color;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1.18pt;
+  font-size: 14pt;
+}
+
+header {
+  background-color: $bg-header;
+  display: flex;
+  flex-direction: column;
+}
+
+header a {
+  color: $text-color;
+}
+
+main {
+  flex: 1;
+
+}
+
+footer {
+  background-color: #4a4a4a;
+  color: #fff;
+  text-align: center;
+  min-height: 15vh;
+  padding: 1vh 0;
+}
+
+// Responsive
+
+
+@media screen and (min-width: $breakpoint-medium) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5vw;
+  }
+
+  main {
+    min-width: 940px;
+    margin: 0 auto;
+  }
+
+  nav ul {
+    display: flex;
+    font-size: 15pt;
+    padding: 3vh 1vw;
+  }
+  nav ul li:nth-child(even), nav ul li:nth-child(odd)  {
+    background-color: #fff;
+  }
+  nav li:nth-child(1) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-large) {
+  body {
+
+  }
+}
