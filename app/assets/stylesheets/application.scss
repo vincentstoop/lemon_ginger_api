@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url("navigation.scss");
+
+// Text colors
+$text-color: #4a4a4a;
+
+// Background-colors
+$bg-header: #fff;
+
+// Breakpoints
+$breakpoint-medium: 600px;
+$breakpoint-large:  960px;
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F1F4EF;
+  color: $text-color;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1.18pt;
+}
+
+header {
+  background-color: $bg-header;
+  display: flex;
+  flex-direction: column;
+}
+
+header a {
+  color: $text-color;
+}
+
+main {
+
+}
+
+footer {
+  background-color: #4a4a4a;
+  color: #fff;
+  text-align: center;
+  min-height: 15vh;
+}
+
+// Responsive
+
+
+@media screen and (min-width: $breakpoint-medium) {
+  body {
+
+  }
+}
+
+
+@media screen and (min-width: $breakpoint-large) {
+  body {
+
+  }
+}
