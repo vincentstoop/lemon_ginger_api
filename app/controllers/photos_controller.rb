@@ -1,5 +1,9 @@
 class PhotosController < ApplicationController
 
+  def new
+    @photo = Photo.new
+  end
+
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @photo = @recipe.photos.new(photo_params)
