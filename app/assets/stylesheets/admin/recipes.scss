@@ -1,3 +1,25 @@
+.recipes-overview {
+  padding: 20px;
+}
+
+.recipes-intro {
+  margin-bottom: 20px;
+}
+
+.recipes-container {
+  margin-top: 50px;
+}
+
+.recipes-card {
+  display: flex;
+}
+
+.recipe-actions {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
 form {
   padding: 20px;
 }
@@ -43,6 +65,7 @@ form {
   display: flex;
   justify-content: space-between;
   width: 70%;
+  padding-top: 0px;
 }
 
 .quantity {
@@ -57,4 +80,8 @@ form {
 
 .optional {
   width: 20%;
+}
+
+.actions {
+  text-align: right;
 }
