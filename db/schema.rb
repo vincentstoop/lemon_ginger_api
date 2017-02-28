@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 20170228090246) do
     t.boolean "featured"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "admin_id"
+    t.boolean "featured"
     t.boolean "published"
     t.index ["admin_id"], name: "index_recipes_on_admin_id"
   end
