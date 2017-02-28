@@ -18,86 +18,52 @@
 @import "bootstrap";
 
 @import "variables";
-@import "top_navigation";
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background-color: $bg-body;
   color: $text-color;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 1.18pt;
   font-size: 14pt;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-  background-color: purple;
-  display: flex;
-  flex-direction: column;
+  background-color: #fff;
+  min-height: 8vh;
+  border-bottom: 1px solid #000;
+  color: #1a869a
 }
 
-header a {
+header h1 {
+  margin: 0;
+  padding: 2vh;
+  text-align: center;
+}
+
+header h1 a, h1 a:active, h1 a:visited, h1 a:hover {
   color: $text-color;
+  text-decoration: none;
 }
 
 main {
   flex: 1;
-}
-
-#banner {
-  min-height: 45vh;
-  background-color: $bg-banner;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-#banner p {
-  line-height: 150%;
+nav {
+  min-width: 200px;
+  border-right: 1px solid black
 }
 
-footer {
-  background-color: #4a4a4a;
-  color: #fff;
-  text-align: center;
-  min-height: 15vh;
-  padding: 1vh 0;
+#content {
+  flex: 1;
+  padding: 10px;
 }
 
-// Responsive
-
-
-@media screen and (min-width: $breakpoint-medium) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 5vw;
-  }
-
-  main {
-    min-width: 940px;
-    margin: 0 auto;
-  }
-
-  #banner {
-    flex-direction: row;
-  }
-
-  nav ul {
-    display: flex;
-    font-size: 15pt;
-    padding: 3vh 1vw;
-  }
-  nav ul li:nth-child(even), nav ul li:nth-child(odd)  {
-    background-color: #fff;
-  }
-  nav li:nth-child(1) {
-    display: none;
-  }
-}
-
-@media screen and (min-width: $breakpoint-large) {
-  body {
-
-  }
+h1 {
+  color: $heading-text-color;
 }

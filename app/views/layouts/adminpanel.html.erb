@@ -11,12 +11,17 @@
 
   <body>
     <header>
-      <h1>Admin</h1>
+      <h1><%= link_to "Admin", admin_recipes_path %></h1>
     </header>
 
-
     <main>
-      <%= yield %>
+      <nav>
+        <%= render 'layouts/admin_navigation' %>
+      </nav>
+
+      <div id="content">
+        <%= yield %>
+      </div>
     </main>
 
   </body>
