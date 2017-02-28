@@ -30,10 +30,19 @@ nav ul li:nth-child(1) {
     font-size: 15pt;
     padding: 3vh 1vw;
   }
+  nav ul li {
+    padding-right: 10px;
+  }
+
   nav ul li:nth-child(even), nav ul li:nth-child(odd)  {
     background-color: #fff;
   }
   nav li:nth-child(1) {
     display: none;
   }
+
+  nav a {
+    color: $link_color;
+    text-decoration: none;
   }
+}
