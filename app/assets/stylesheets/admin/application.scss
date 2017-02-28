@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* @import "bootstrap-sprockets";
+@import "bootstrap"; */
+@import "variables";
+@import "top_navigation";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $bg-body;
+  color: $text-color;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1.18pt;
+  font-size: 14pt;
+}
+
+header {
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+}
+
+header a {
+  color: $text-color;
+}
+
+main {
+  flex: 1;
+}
+
+#banner {
+  min-height: 45vh;
+  background-color: $bg-banner;
+  display: flex;
+  flex-direction: column;
+}
+
+#banner p {
+  line-height: 150%;
+}
+
+footer {
+  background-color: #4a4a4a;
+  color: #fff;
+  text-align: center;
+  min-height: 15vh;
+  padding: 1vh 0;
+}
+
+// Responsive
+
+
+@media screen and (min-width: $breakpoint-medium) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5vw;
+  }
+
+  main {
+    min-width: 940px;
+    margin: 0 auto;
+  }
+
+  #banner {
+    flex-direction: row;
+  }
+
+  nav ul {
+    display: flex;
+    font-size: 15pt;
+    padding: 3vh 1vw;
+  }
+  nav ul li:nth-child(even), nav ul li:nth-child(odd)  {
+    background-color: #fff;
+  }
+  nav li:nth-child(1) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $breakpoint-large) {
+  body {
+
+  }
+}
