@@ -1,4 +1,4 @@
-<%= form_for [:admin, @recipe] do |f| %>
+<%= fields_for @recipe.ingredients do |i| %>
 
   <div class="form-group">
     <h2>Ingrediënten</h2>
@@ -8,23 +8,23 @@
     <div class="form-group ingredients">
       <div class="quantity">
         <label>Hoeveelheid</label>
-          <div class="ingredient-qnt">
-            <%= f.text_field :title, class: "form-control" %>
-          </div>
+        <div class="ingredient-qnt">
+          <%= text_field :amount, class: "form-control" %>
+        </div>
       </div>
       <div class="ingredient">
         <label>Naam ingrediënt</label>
-          <div class="ingredient-name">
-            <%= f.text_field :persons, class: "form-control" %>
-          </div>
+        <div class="ingredient-name">
+          <%= i.text_field :name, class: "form-control" %>
+        </div>
       </div>
       <div class="optional">
         <label>Optioneel?</label>
-        <%= f.check_box :persons, class: "form-control" %>
+        <%= check_box :optional, class: "form-control" %>
       </div>
     </div>
   </div>
-  <span>+ Add Ingredient</span>
+  <span>+ Voeg Ingrediënt toe</span>
 
   <hr>
 <% end %>
