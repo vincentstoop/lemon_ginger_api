@@ -1,0 +1,2 @@
+module Admin::CookingStepsHelper
+end
