@@ -1,4 +1,4 @@
-<%= form_for [:admin, @recipe] do |f| %>
+<%= form_for [:admin, @recipe], html: { multipart: true } do |f| %>
 
   <div class="form-group">
     <h2>Algemeen</h2>
@@ -38,8 +38,8 @@
     <label>Photos</label>
     <div class="photos">
       <span class="btn btn-default">
-        <%= file_field_tag "photos[]", type: :file, multiple: true %>
-      </div>
+      <%= file_field :photos, type: :file, multiple: true %>
+    </div>
     </span>
   </div>
 
