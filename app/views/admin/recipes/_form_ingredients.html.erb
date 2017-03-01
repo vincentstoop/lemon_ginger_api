@@ -1,30 +1,22 @@
-<%= fields_for @recipe.ingredients do |i| %>
-
-  <div class="form-group">
-    <h2>Ingrediënten</h2>
-  </div>
+<%= f.fields_for :ingredients do |i| %>
 
   <div>
     <div class="form-group ingredients">
       <div class="quantity">
         <label>Hoeveelheid</label>
         <div class="ingredient-qnt">
-          <%= text_field :amount, class: "form-control" %>
+          <%= i.text_field :amount, class: "form-control" %>
         </div>
       </div>
       <div class="ingredient">
-        <label>Naam ingrediënt</label>
-        <div class="ingredient-name">
-          <%= i.text_field :name, class: "form-control" %>
-        </div>
-      </div>
       <div class="optional">
         <label>Optioneel?</label>
-        <%= check_box :optional, class: "form-control" %>
+        <%= i.check_box :optional, class: "form-control" %>
       </div>
     </div>
   </div>
   <span>+ Voeg Ingrediënt toe</span>
 
   <hr>
+
 <% end %>

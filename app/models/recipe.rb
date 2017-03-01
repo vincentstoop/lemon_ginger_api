@@ -7,5 +7,6 @@ class Recipe < ApplicationRecord
   has_many :photos
   belongs_to :admin
 
-  accepts_nested_attributes_for :ingredients, :cooking_steps
+  accepts_nested_attributes_for :ingredients, allow_destroy: true
+  accepts_nested_attributes_for :cooking_steps, allow_destroy: true
 end
