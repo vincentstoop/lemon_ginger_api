@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :recipes, only: [:show, :index]
     resources :categories, only: [:show, :index]
+    resources :products, only: [:show, :index]
   end
 
   namespace :admin do
