@@ -45,3 +45,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'active_model_serializers', '~> 0.10.4'
+gem 'cocoon'
