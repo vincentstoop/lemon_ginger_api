@@ -16,14 +16,14 @@ class Admin::RecipesController < Admin::BaseController
   end
 
   def create
-debugger
-    @recipe = current_admin.recipes.build(recipe_params)
-    @recipe.ingredients.build
-    @recipe.cooking_steps.build
+    @recipe = current_admin.recipes.new(recipe_params)
 
     if @recipe.save
       redirect_to admin_recipe_path(@recipe), notice: 'Recipe was added!'
     else
+      @recipe.ingredients.build
+      @products = Product.all
+      @recipe.cooking_steps.build
       render :new
     end
   end
