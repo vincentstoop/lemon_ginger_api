@@ -1,10 +1,10 @@
-class PhotosController < ApplicationController
+class Admin::PhotosController < Admin::ApplicationController
 
   def index
 
   end
 
-# for testing the photo actions. 
+# for testing the photo actions.
   def show
     @photos = Photo.all
   end
