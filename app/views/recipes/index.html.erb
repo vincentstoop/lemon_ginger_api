@@ -1,0 +1,13 @@
+<h2>Featured recipes</h2>
+<div id="recipes-container">
+  <% @recipes.each do |recipe| %>
+      <div class="recipe-item">
+        <%= image_tag recipe.photos.first.image %>
+
+        <div class="overlay">
+          <h3><%= recipe.title %></h3>
+          <%= recipe.subtitle %>
+        </div>
+      </div>
+  <% end %>
+</div>

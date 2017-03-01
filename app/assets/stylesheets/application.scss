@@ -76,7 +76,7 @@ footer {
   }
 
   main {
-    min-width: 940px;
+    max-width: 940px;
     margin: 0 auto;
   }
 
@@ -93,10 +93,21 @@ footer {
   }
 
   .recipe-item {
-    min-width: 45%;
-    min-height: 5vh;
+    width: 400px;
     background-color: #fff;
     margin-bottom: 1vh;
+    position: relative;
+  }
+
+  .recipe-item img {
+    width: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.8);
   }
 }
 
