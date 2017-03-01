@@ -1,2 +1,21 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<div class="recipes-overview">
+  <div class="recipes-intro">
+    <h2>Recepten</h2>
+    <p><%= link_to "+ Voeg nieuw recept toe", new_admin_recipe_path %></p>
+  </div>
+
+  <div class="recipes-container">
+    <h2>Overzicht</h2>
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-card">
+        <h3><%=recipe.title %></h3>
+        <p><%= recipe.subtitle %></p>
+        <div class="recipe-actions">
+          <p><%= link_to "Edit", edit_admin_recipe_path(recipe) %></p>
+          <p><%= link_to "Delete", admin_recipe_path(recipe) %></p>
+          <p><%= link_to "Publish", admin_recipe_path(recipe) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

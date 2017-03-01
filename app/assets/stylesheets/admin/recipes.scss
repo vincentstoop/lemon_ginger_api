@@ -1,3 +1,91 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.recipes-overview {
+  padding: 20px;
+}
+
+.recipes-intro {
+  margin-bottom: 20px;
+}
+
+.recipes-container {
+  margin-top: 50px;
+}
+
+.recipes-card {
+  display: flex;
+}
+
+.recipe-actions {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-actions p {
+  margin-right: 10px;  
+}
+
+form {
+  padding: 20px;
+}
+
+.form-group h2 {
+  color: #1a8696;
+}
+
+.form-control.intro {
+  height: 100px
+}
+
+.form-group.time-person {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cooking-time {
+  width: 40%;
+}
+
+.amount-people {
+  width: 40%;
+}
+
+.time {
+  display: flex;
+}
+
+.time input {
+  margin-right: 10px;
+}
+
+.people {
+  display: flex;
+}
+
+.people input {
+  margin-right: 10px;
+}
+
+.form-group.ingredients {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  padding-top: 0px;
+}
+
+.quantity {
+  width: 20%;
+  margin-right: 20px;
+}
+
+.ingredient {
+  width: 60%;
+  margin-right: 20px;
+}
+
+.optional {
+  width: 20%;
+}
+
+.actions {
+  text-align: right;
+}
