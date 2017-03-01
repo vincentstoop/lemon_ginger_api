@@ -13,7 +13,6 @@
         <div class="recipe-actions">
           <p><%= link_to "Edit", edit_admin_recipe_path(recipe) %></p>
           <p><%= link_to "Delete", admin_recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } %></p>
-          <p><%= link_to "Publish", admin_recipe_path(recipe) %></p>
         </div>
       </div>
     <% end %>
