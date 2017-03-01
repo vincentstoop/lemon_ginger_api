@@ -53,7 +53,7 @@ class Admin::RecipesController < Admin::BaseController
   end
 
   private
- 
+
   def recipe_params
     params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :photo,
     ingredients_attributes: [:id, :product_id, :amount, :optional], cooking_steps_attributes: [:title, :description, :cooking_time])
