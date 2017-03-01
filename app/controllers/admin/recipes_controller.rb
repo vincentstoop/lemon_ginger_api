@@ -53,7 +53,6 @@ class Admin::RecipesController < Admin::BaseController
   end
 
   private
-  # <ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"N3HhcGW9k07GlkjxFYbFjXyEBw3iFsljVg2ya7RAWfpf5XQ0XlA71Z1649bVPvI9JOzsVKou9cCdJMowYNF0eA==", "recipe"=>{"title"=>"kip", "subtitle"=>"kippetje", "intro"=>"kippetje lekker yum", "cooking_time"=>"22", "persons"=>"2", "ingredients_attributes"=>{"0"=>{"amount"=>"4", "product_id"=>"2", "optional"=>"1"}}, "cooking_steps_attributes"=>{"0"=>{"title"=>"braden", "description"=>"kip met ei braden?", "cooking_time"=>"11"}}}, "images"=>[""], "commit"=>"Opslaan", "controller"=>"admin/recipes", "action"=>"create"} permitted: false>
 
   def recipe_params
     params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :photo,
