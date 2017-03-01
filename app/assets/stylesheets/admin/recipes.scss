@@ -10,8 +10,16 @@
   margin-top: 50px;
 }
 
-.recipes-card {
-  display: flex;
+.recipes-container h2 {
+  margin-bottom: 15px;
+}
+
+.recipe-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.recipe-card h3 a {
+  color: #fbde5b;
 }
 
 .recipe-actions {
@@ -55,6 +63,10 @@ form {
 
 .time input {
   margin-right: 10px;
+}
+
+.time.cookingstep {
+  width: 31%
 }
 
 .people {
