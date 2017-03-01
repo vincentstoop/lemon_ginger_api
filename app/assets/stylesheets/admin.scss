@@ -60,6 +60,10 @@ nav {
   border-right: 1px solid black
 }
 
+nav a {
+  color: $text-color;
+}
+
 nav ul {
   padding: 0px;
 }
