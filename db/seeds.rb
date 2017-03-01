@@ -1,7 +1,7 @@
 Category.destroy_all
 Photo.destroy_all
-Product.destroy_all
 Ingredient.destroy_all
+Product.destroy_all
 CookingStep.destroy_all
 Recipe.destroy_all
 
