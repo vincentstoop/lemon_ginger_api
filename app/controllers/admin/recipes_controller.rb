@@ -1,4 +1,5 @@
 class Admin::RecipesController < Admin::BaseController
+
   def index
     @recipes = Recipe.all
   end
@@ -9,10 +10,16 @@ class Admin::RecipesController < Admin::BaseController
 
   def new
     @recipe = current_admin.recipes.build
+    @recipe.ingredients.build
+    @products = Product.all
+    @recipe.cooking_steps.build
   end
 
   def create
+debugger
     @recipe = current_admin.recipes.build(recipe_params)
+    @recipe.ingredients.build
+    @recipe.cooking_steps.build
 
     if @recipe.save
       redirect_to admin_recipe_path(@recipe), notice: 'Recipe was added!'
@@ -46,8 +53,11 @@ class Admin::RecipesController < Admin::BaseController
   end
 
   private
+  # <ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"N3HhcGW9k07GlkjxFYbFjXyEBw3iFsljVg2ya7RAWfpf5XQ0XlA71Z1649bVPvI9JOzsVKou9cCdJMowYNF0eA==", "recipe"=>{"title"=>"kip", "subtitle"=>"kippetje", "intro"=>"kippetje lekker yum", "cooking_time"=>"22", "persons"=>"2", "ingredients_attributes"=>{"0"=>{"amount"=>"4", "product_id"=>"2", "optional"=>"1"}}, "cooking_steps_attributes"=>{"0"=>{"title"=>"braden", "description"=>"kip met ei braden?", "cooking_time"=>"11"}}}, "images"=>[""], "commit"=>"Opslaan", "controller"=>"admin/recipes", "action"=>"create"} permitted: false>
+
   def recipe_params
-    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :featured, :published)
+    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :photo,
+    ingredients_attributes: [:id, :product_id, :amount, :optional], cooking_steps_attributes: [:title, :description, :cooking_time])
   end
 
 end
