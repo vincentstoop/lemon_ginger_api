@@ -1,4 +1,5 @@
 class Admin::RecipesController < Admin::BaseController
+
   def index
     @recipes = Recipe.all
   end
@@ -9,14 +10,20 @@ class Admin::RecipesController < Admin::BaseController
 
   def new
     @recipe = current_admin.recipes.build
+    @recipe.ingredients.build
+    @products = Product.all
+    @recipe.cooking_steps.build
   end
 
   def create
-    @recipe = current_admin.recipes.build(recipe_params)
+    @recipe = current_admin.recipes.new(recipe_params)
 
     if @recipe.save
       redirect_to admin_recipe_path(@recipe), notice: 'Recipe was added!'
     else
+      @recipe.ingredients.build
+      @products = Product.all
+      @recipe.cooking_steps.build
       render :new
     end
   end
@@ -46,8 +53,10 @@ class Admin::RecipesController < Admin::BaseController
   end
 
   private
+ 
   def recipe_params
-    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :featured, :published)
+    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :photo,
+    ingredients_attributes: [:id, :product_id, :amount, :optional], cooking_steps_attributes: [:title, :description, :cooking_time])
   end
 
 end

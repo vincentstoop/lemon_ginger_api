@@ -31,7 +31,7 @@ body {
 }
 
 header {
-  background-color: #fff;
+  background-color: #4a4a4a;
   min-height: 8vh;
   border-bottom: 1px solid #000;
   color: #1a869a
@@ -44,7 +44,7 @@ header h1 {
 }
 
 header h1 a, h1 a:active, h1 a:visited, h1 a:hover {
-  color: $text-color;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -55,15 +55,53 @@ main {
 }
 
 nav {
+  padding: 20px;
   min-width: 200px;
   border-right: 1px solid black
 }
 
+nav a {
+  color: $text-color;
+}
+
+nav ul {
+  padding: 0px;
+}
+nav li {
+  margin: 20px 0px;
+  padding: 20px;
+  list-style-type: none;
+  text-align: center;
+}
+
+nav span.glyphicon {
+  font-size: 1.6em;
+}
+
+a {
+  color: #1a8696;
+}
+
+.btn-primary {
+  border-color: #1a8696;
+  background-color: #1a8696;
+}
+
+.btn-primary:hover {
+  border-color: #24a2b5;
+  background-color: #24a2b5;
+}
+
 #content {
   flex: 1;
-  padding: 10px;
+  padding: 30px;
 }
 
 h1 {
   color: $heading-text-color;
+}
+
+h2 {
+  margin-top: 10px;
+  color: #1a8696;
 }
