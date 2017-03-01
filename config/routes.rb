@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :recipes
     resources :categories
     resources :products
+    resources :ingredients, only: [:destroy]
+    resources :cooking_steps, only: [:destroy, :update]
   end
 
   devise_for :admin
