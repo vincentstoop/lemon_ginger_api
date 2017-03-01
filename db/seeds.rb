@@ -1,11 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Cooking_step.destroy_all
 Category.destroy_all
+Recipe.destroy_all
+
+cooking_step1 = Cooking_step.create(description: 'Verwarm de oven voor op 175 C', recipe_id: 1)
+cooking_step2 = Cooking_step.create(description: 'Vet een tulbandvorm in met een beetje olie en strooi er een dun laagje bloem in, klop overtollig bloem er weer uit.', recipe_id: 1)
+cooking_step3 = Cooking_step.create(description: 'Meng in een kom de yoghurt met de rasp en het sap van de citroen. Roer goed door met een garde en laat het even staan.', recipe_id: 1)
+cooking_step4 = Cooking_step.create(description: 'Zeef in een andere kom de bloem, het bakpoeder, de baksoda en het zout en roer door elkaar.', recipe_id: 1)
+cooking_step5 = Cooking_step.create(description: 'Voeg de olie, ahorn siroop, en rijststroop toe aan de yoghurt en meng.', recipe_id: 1)
+cooking_step6 = Cooking_step.create(description: 'Meng met een garde de bloem door het yoghurtmengsel. Het beslag wordt meteen dik en begint al met reizen door het bakpoeder en het citroensap dat op elkaar reageert.', recipe_id: 1)
+cooking_step7 = Cooking_step.create(description: 'Spatel nu voorzichtig het beslag in de bakvorm en strijk aan de bovenkant glad.', recipe_id: 1)
+cooking_step8 = Cooking_step.create(description: 'Bak de cake ongeveer 40 minuten, tot de bovenkant licht goudbruin is. Laat de cake 10 minuten afkoelen in de vorm en stort hem dan op een rooster om af te koelen.', recipe_id: 1)
+
 
 cat1 = Category.create(name: 'maaltijd')
 cat2 = Category.create(name: 'lunch')
@@ -21,3 +26,5 @@ cat11 = Category.create(name: 'vegan')
 cat12 = Category.create(name: 'vegetarisch')
 cat13 = Category.create(name: 'vis')
 cat14 = Category.create(name: 'eieren')
+
+recipe1 = Recipe.create(title: 'Citroentulband', subtitle: 'Citroen en yoghurt =) dubbelfris.', cooking_time: 60, intro: 'Gelukkig is deze tulband ook lekker zoet, maar niet te, je kan er best een schepje citroenjam bij eten :-)', featured: true, published: true )
