@@ -62,9 +62,12 @@
     <h2>Bereidingsstappen</h2>
   </div>
 
-  <%= f.fields_for :cooking_steps do |cookingstep| %>
-    <%= render 'cookingstep_fields', f: cookingstep %>
-  <% end %>
+  <div id="cookingsteps">
+    <%= f.fields_for :cooking_steps do |cookingstep| %>
+      <%= render 'cooking_step_fields', f: cookingstep %>
+      <%= link_to_add_association '+ Voeg stap toe', f, :cooking_steps, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Opslaan", class: "btn btn-primary btn-lg" %>
