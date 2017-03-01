@@ -1,13 +1,14 @@
 class Api::RecipesController < ApplicationController
   def index
     recipes = Recipe.all
-    render status:200, json: {
-      recipes: recipes
-    }.to_json({include: [:cooking_steps,
-                          {:ingredients => {only: [:amount, :optional],
-                                            include: {:product => {
-                                              only: [:name, :description]}}}},
-                          :categories, :photos] })
+    # render status:200, json: {
+    #   recipes: recipes
+    # }.to_json({include: [:cooking_steps,
+    #                       {:ingredients => {only: [:amount, :optional],
+    #                                         include: {:product => {
+    #                                           only: [:name, :description]}}}},
+    #                       :categories, :photos] })
+    render status: 200, json: recipes
   end
 
   def show
