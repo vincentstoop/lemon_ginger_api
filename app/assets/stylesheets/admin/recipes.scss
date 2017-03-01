@@ -21,7 +21,7 @@
 }
 
 .recipe-actions p {
-  margin-right: 10px;  
+  margin-right: 10px;
 }
 
 form {
@@ -88,4 +88,22 @@ form {
 
 .actions {
   text-align: right;
+}
+
+.general.time-persons {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.general.time {
+  display: flex;
+}
+
+span.glyphicon {
+  margin-right: 10px;
+}
+
+.general.persons {
+  display: flex;
 }
