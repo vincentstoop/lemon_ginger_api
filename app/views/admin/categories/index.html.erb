@@ -9,8 +9,9 @@
     <ul>
     <% @categories.each do |category| %>
         <li>
-          <p><%=link_to category.name, admin_category_path(category) %></p>
-          <p><%= link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Weet je het zeker?" } %></p>
+          <p class="name"><%=link_to category.name, admin_category_path(category) %></p>
+          <p class="edit"><%= link_to "Edit", edit_admin_category_path(category) %></p>
+          <p class="delete"><%= link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Weet je het zeker?" } %></p>
         </li>
     <% end %>
   </ul>
