@@ -8,7 +8,7 @@
         <% end %>
 
         <div class="overlay">
-          <h3><%= recipe.title %></h3>
+          <h3><%= link_to recipe.title, recipe_path(recipe) %></h3>
 
           <div class="overlaydetails">
             <span class="cooking_time"><%= recipe.cooking_time %> min.</span>
