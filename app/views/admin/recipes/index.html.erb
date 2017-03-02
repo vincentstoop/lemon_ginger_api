@@ -8,12 +8,11 @@
     <h2>Overzicht</h2>
     <% @recipes.each do |recipe| %>
       <div class="recipe-card">
-        <h3><%=recipe.title %></h3>
+        <h3><%=link_to recipe.title, admin_recipe_path(recipe) %></h3>
         <p><%= recipe.subtitle %></p>
         <div class="recipe-actions">
           <p><%= link_to "Edit", edit_admin_recipe_path(recipe) %></p>
-          <p><%= link_to "Delete", admin_recipe_path(recipe) %></p>
-          <p><%= link_to "Publish", admin_recipe_path(recipe) %></p>
+          <p><%= link_to "Delete", admin_recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } %></p>
         </div>
       </div>
     <% end %>

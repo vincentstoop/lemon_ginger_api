@@ -82,6 +82,11 @@ a {
   color: #1a8696;
 }
 
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .btn-primary {
   border-color: #1a8696;
   background-color: #1a8696;
@@ -101,7 +106,7 @@ h1 {
   color: $heading-text-color;
 }
 
-h2 {
+h2, h3 {
   margin-top: 10px;
   color: #1a8696;
 }
