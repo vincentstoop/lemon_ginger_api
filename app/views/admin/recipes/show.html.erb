@@ -1,14 +1,22 @@
 <div class="recipe-container">
-  <h2><%= @recipe.title %></h2>
+  <div class="title">
+    <h2><%= @recipe.title %></h2>
+    <%= link_to "Edit", edit_admin_recipe_path(@recipe) %>
+  </div>
   <p><%= @recipe.subtitle %></p>
 
   <hr>
-  
+
   <h3>Algemeen</h3>
   <p><%= @recipe.intro %></p>
   <div class="general time-persons">
     <p class="general time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> <%= @recipe.cooking_time %> minuten</p>
     <p class="general persons"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @recipe.persons %> personen</p>
+  </div>
+  <div class="photos">
+    <% @recipe.photos.each do |photo| %>
+      <%= image_tag photo.image_url(:thumb) %>
+    <% end %>
   </div>
 
   <hr>
