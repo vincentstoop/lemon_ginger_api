@@ -1,6 +1,5 @@
 class Admin::PhotosController < Admin::ApplicationController
   def destroy
-    debugger
     photo = Photo.find(params[:id])
     recipe = photo.recipe
 

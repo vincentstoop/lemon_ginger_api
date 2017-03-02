@@ -4,6 +4,9 @@ Ingredient.destroy_all
 Product.destroy_all
 CookingStep.destroy_all
 Recipe.destroy_all
+Admin.destroy_all
+
+admin = Admin.create(email: 'admin@example.com', password: 'abcd1234')
 
 cat1 = Category.create(name: 'maaltijd')
 cat2 = Category.create(name: 'lunch')
@@ -107,16 +110,16 @@ cooking_step40 = CookingStep.create(description: 'Hak de peterselie fijn.')
 cooking_step41 = CookingStep.create(description: 'Als de soep klaar is pureer je hem met een staafmixer. Breng eventueel op smaak met zout en peper.  Als de soep te dik is verdun hem dan met een beetje water en warm de soep nog even door.')
 cooking_step42 = CookingStep.create(description: 'Schep de soep in kommen en garneer met de peterselie en de paprikareepjes met bosui.')
 
-recipe1 = Recipe.create(title: 'Citroentulband', subtitle: 'Citroen en yoghurt =) dubbelfris.', cooking_time:   60, intro: 'Gelukkig is deze tulband ook lekker zoet, maar niet te, je kan er best een schepje citroenjam bij eten :-)', featured: true, published: true, cooking_steps: [cooking_step1, cooking_step2, cooking_step3, cooking_step4, cooking_step5, cooking_step6, cooking_step7, cooking_step8], categories: [cat4, cat7, cat14])
+recipe1 = Recipe.create(title: 'Citroentulband', subtitle: 'Citroen en yoghurt =) dubbelfris.', cooking_time:   60, intro: 'Gelukkig is deze tulband ook lekker zoet, maar niet te, je kan er best een schepje citroenjam bij eten :-)', featured: true, published: true, cooking_steps: [cooking_step1, cooking_step2, cooking_step3, cooking_step4, cooking_step5, cooking_step6, cooking_step7, cooking_step8], categories: [cat4, cat7, cat14], admin: admin)
 
 recipe2 = Recipe.create(title: 'Groene Shakshuka', subtitle: 'Een eiergerecht met groenten', cooking_time: 40, intro: 'Shakshuka is geen exotisch dansje of gerecht met kikkerbilletjes. Het is een eiergerecht met groenten wat veel gegeten wordt in het middenoosten. Je kan het eten als ontbijt, brunch, lunch en simpel diner, en het is supersnel klaar. Het is lekker met een dikke snee geroosterd zuurdesem brood.
-Je kan de prei en spinazie ook vervangen door 2 sjalotjes en fijngesneden snijbiet.', featured: true, published: true, cooking_steps: [cooking_step9, cooking_step10, cooking_step11, cooking_step12, cooking_step13, cooking_step14, cooking_step15], categories: [cat1, cat2, cat10, cat12, cat14], persons: 2)
+Je kan de prei en spinazie ook vervangen door 2 sjalotjes en fijngesneden snijbiet.', featured: true, published: true, cooking_steps: [cooking_step9, cooking_step10, cooking_step11, cooking_step12, cooking_step13, cooking_step14, cooking_step15], categories: [cat1, cat2, cat10, cat12, cat14], persons: 2, admin: admin)
 
-recipe3 = Recipe.create(title: 'Tempeh Burgers', subtitle: 'Makkelijk en snel', cooking_time: 30, intro: 'Heerlijke burgers die makkelijk te bereiden zijn. Eventueel kan je de sla vervangen door spinazie.', featured: true, published: true, cooking_steps: [cooking_step16, cooking_step17, cooking_step18, cooking_step19, cooking_step20, cooking_step21, cooking_step22], categories: [cat1, cat10, cat12], persons: 2)
+recipe3 = Recipe.create(title: 'Tempeh Burgers', subtitle: 'Makkelijk en snel', cooking_time: 30, intro: 'Heerlijke burgers die makkelijk te bereiden zijn. Eventueel kan je de sla vervangen door spinazie.', featured: true, published: true, cooking_steps: [cooking_step16, cooking_step17, cooking_step18, cooking_step19, cooking_step20, cooking_step21, cooking_step22], categories: [cat1, cat10, cat12], persons: 2, admin: admin)
 
-recipe4 = Recipe.create(title: 'Chocolade-Ganachetaart met walnotenbodem', subtitle: 'Een diepe chocoladesmaak met sinaasappel en een brosse bodem.', cooking_time: 60, intro: 'Extra nodig: keukenmachine en taartvorm met losse bodem.', featured: false, published: false, cooking_steps: [cooking_step23, cooking_step24, cooking_step25, cooking_step26, cooking_step27, cooking_step28, cooking_step29, cooking_step30, cooking_step31], categories: [cat3, cat4, cat7])
+recipe4 = Recipe.create(title: 'Chocolade-Ganachetaart met walnotenbodem', subtitle: 'Een diepe chocoladesmaak met sinaasappel en een brosse bodem.', cooking_time: 60, intro: 'Extra nodig: keukenmachine en taartvorm met losse bodem.', featured: false, published: false, cooking_steps: [cooking_step23, cooking_step24, cooking_step25, cooking_step26, cooking_step27, cooking_step28, cooking_step29, cooking_step30, cooking_step31], categories: [cat3, cat4, cat7], admin: admin)
 
-recipe5 = Recipe.create(title: 'Pompoensoep met pit en bite', cooking_time: 80, intro: 'Een lekkere verwarmende soep met pittige gember en en knapperige gebakken paprika.', featured: true, published: true, week_recipe: true, cooking_steps: [cooking_step32, cooking_step33, cooking_step34, cooking_step35, cooking_step36, cooking_step37, cooking_step38, cooking_step39, cooking_step40, cooking_step41, cooking_step42], categories: [cat1, cat2, cat5, cat8, cat12])
+recipe5 = Recipe.create(title: 'Pompoensoep met pit en bite', cooking_time: 80, intro: 'Een lekkere verwarmende soep met pittige gember en en knapperige gebakken paprika.', featured: true, published: true, week_recipe: true, cooking_steps: [cooking_step32, cooking_step33, cooking_step34, cooking_step35, cooking_step36, cooking_step37, cooking_step38, cooking_step39, cooking_step40, cooking_step41, cooking_step42], categories: [cat1, cat2, cat5, cat8, cat12], admin: admin)
 
 photo1 = Photo.create(image: File.open('app/assets/images/citroentulband.jpg'), recipe: recipe1)
 photo2 = Photo.create(image: File.open('app/assets/images/shakshuka1.jpg'), recipe: recipe2)
