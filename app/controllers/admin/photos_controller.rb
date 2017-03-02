@@ -1,11 +1,11 @@
 class Admin::PhotosController < Admin::ApplicationController
   def destroy
-    @photo = Photo.find(params[:id])
-    @recipe = @photo.recipe
+    debugger
+    photo = Photo.find(params[:id])
+    recipe = photo.recipe
 
-    @photo.destroy
+    photo.destroy
 
-    redirect_to edit_recipe_path(@recipe), notice: "Photo successfully removed"
+    redirect_to edit_admin_recipe_path(recipe), notice: "Foto verwijderd."
   end
-  private
 end
