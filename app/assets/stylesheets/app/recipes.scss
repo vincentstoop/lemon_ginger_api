@@ -1,0 +1,73 @@
+@import "variables";
+
+#recipes-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recipe-item {
+  width: 350px;
+  height: 350px;
+  background-color: #fff;
+  margin-bottom: 3vh;
+  -webkit-box-shadow: 2px 6px 22px -5px rgba(130,130,130,1);
+  -moz-box-shadow: 2px 6px 22px -5px rgba(130,130,130,1);
+  box-shadow: 2px 6px 22px -5px rgba(130,130,130,1);
+  border-radius: 4px;
+  position: relative;
+}
+
+.recipe-item img {
+  width: 100%;
+  position: relative;
+  border-radius: 4px;
+}
+
+.overlay {
+  width: 100%;
+  padding: 6px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+
+.overlaydetails {
+  font-size: 70%;
+}
+
+.cooking_time {
+  margin: 0;
+  display: inline;
+  font-weight: bold;
+}
+
+h3 {
+  margin: 0 0 3px 0;
+  font-family: 'Simonetta';
+  font-size: 20pt
+}
+
+.overlay a {
+  text-decoration: none;
+  color: $text-color;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $hr-color;
+  padding: 0;
+  width: 60%;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  text-align: center;
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  #recipes-container {
+    flex-direction: row;
+  }
+}

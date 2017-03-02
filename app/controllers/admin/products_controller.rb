@@ -3,6 +3,10 @@ class Admin::ProductsController < Admin::BaseController
     @products = Product.all
   end
 
+  def new
+    @product = Product.new
+  end
+
   def create
     @product = Product.new(product_params)
 
@@ -13,11 +17,15 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
   def update
     @product = Product.find(params[:id])
 
     if @product.update(product_params)
-      redirect_to admin_categories_path, notice: 'Product was updated.'
+      redirect_to admin_products_path, notice: 'Product was updated.'
     else
       render :index, alert: "Product couldn't be updated."
     end

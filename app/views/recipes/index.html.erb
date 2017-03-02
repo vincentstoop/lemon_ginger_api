@@ -1,13 +1,22 @@
 <h2>Featured recipes</h2>
+
 <div id="recipes-container">
   <% @recipes.each do |recipe| %>
       <div class="recipe-item">
-        <%= image_tag recipe.photos.first.image %>
+        <% if recipe.photos.any? %>
+          <%= image_tag recipe.photos.first.image %>
+        <% end %>
 
         <div class="overlay">
-          <h3><%= recipe.title %></h3>
-          <%= recipe.subtitle %>
+          <h3><%= link_to recipe.title, recipe_path(recipe) %></h3>
+
+          <div class="overlaydetails">
+            <span class="cooking_time"><%= recipe.cooking_time %> min.</span>
+             &bull; <%= recipe.persons %> personen
+          </div>
+
         </div>
       </div>
   <% end %>
+
 </div>

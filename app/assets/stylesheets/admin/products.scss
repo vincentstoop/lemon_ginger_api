@@ -1,0 +1,30 @@
+.products-container {
+  margin-top: 30px;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      justify-content: space-between;
+      flex: 6;
+      border-bottom: 1px solid lighten(#4a4a4a, 50);
+      margin-bottom: 10px;
+      p.name {
+        width: 300px;
+        flex: 2;
+        &:last-child {
+          text-align: right;
+        }
+      }
+      p.description {
+        flex: 3;
+      }
+      p.edit {
+        flex: 0.5;
+      }
+      p.delete {
+        flex: 0.5;
+      }
+    }
+  }
+}

@@ -3,6 +3,15 @@ class Admin::CategoriesController < Admin::BaseController
     @categories = Category.all
   end
 
+  def new
+    @category = Category.new
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    @recipes = Recipe.all
+  end
+
   def create
     @category = Category.new(category_params)
 
@@ -11,6 +20,10 @@ class Admin::CategoriesController < Admin::BaseController
     else
       render :index, alert: "Category couldn't be saved."
     end
+  end
+
+  def edit
+    @category = Category.find(params[:id])
   end
 
   def update
