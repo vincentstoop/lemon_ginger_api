@@ -12,6 +12,7 @@
   <body>
     <header>
       <h1><%= link_to "Admin", admin_recipes_path %></h1>
+      <%= link_to "Uitloggen", destroy_admin_session_path, method: :delete %>
     </header>
 
     <main>
