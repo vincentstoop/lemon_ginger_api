@@ -1,5 +1,7 @@
 <%= form_for [:admin, @recipe], html: { multipart: true } do |f| %>
-
+  <% @recipe.errors.full_messages.each do |msg| %>
+    <p class="Error"><%= msg %></p>
+  <% end %>
   <section id="recipe-general">
     <div class="form-group">
       <h2>Algemeen</h2>
@@ -22,14 +24,14 @@
       <div class="cooking-time">
         <label>Bereidingstijd</label>
           <div class="time">
-            <%= f.number_field :cooking_time, class: "form-control" %>
+            <%= f.number_field :cooking_time, class: "form-control", min: 0 %>
             <span>minuten</span>
           </div>
       </div>
       <div class="amount-people">
         <label>Aantal personen</label>
           <div class="people">
-            <%= f.number_field :persons, class: "form-control" %>
+            <%= f.number_field :persons, class: "form-control", min: 1 %>
             <span>personen</span>
           </div>
       </div>
@@ -48,12 +50,12 @@
       </div>
     </div>
 
-    <label>Categories</label>
+    <label>Categories
     <div class="categories">
       <%= f.collection_check_boxes(:category_ids, Category.all.order(:name), :id, :name) do |c| %>
       <div class="form-group">
         <%= c.check_box(class: "check_box") %> <%= c.object.name %>
-      </div>
+      </div></label>
       <% end %>
     </div>
   </section>
