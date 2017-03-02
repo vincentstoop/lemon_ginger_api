@@ -1,6 +1,6 @@
 class Api::RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    recipes = Recipe.all
     render status: 200, json: recipes
   end
 
