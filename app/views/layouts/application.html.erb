@@ -11,15 +11,21 @@
 
   <body>
     <header>
-      <h1>Lemon & Ginger</h1>
+      <h1><%= link_to "Lemon & Ginger", root_path %></h1>
       <%= render 'layouts/navigation' %>
     </header>
 
     <div id="banner">
-      <div id="banner-image" style="width: 300px; height: 400px; background-color: grey;"></div>
+      <div id="banner-image" style="width: 300px; height: 400px; background-color: grey;">
+        [image here]
+        <%= image_tag ("applestore.png"), :class => "applestore"  %>
+
+      </div>
       <div id="banner-text">
         <h2>Get the app!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a posuere orci. Pellentesque mattis finibus arcu vel tristique. Sed varius eu arcu ut efficitur. In condimentum, ante vitae lacinia accumsan, odio nisi feugiat ex, sed tempus diam mi nec arcu. Nulla facilisi. Curabitur feugiat arcu sit amet vulputate convallis. Suspendisse sit amet dui at orci imperdiet gravida. Vestibulum ut dui nec massa tincidunt rutrum. Nulla facilisi. Ut vel pretium enim. Morbi ornare feugiat nibh, eget cursus sapien luctus eu. Curabitur volutpat maximus nunc, a tincidunt purus facilisis scelerisque. Sed at varius dui.</p>
+        <p>Dit is dè app voor lekkere gezonde vegetarische recepten. Veel recepten zijn helemaal vegan en dat is lekker duurzaam. En ze zijn allemaal suikervrij, ook de awesome chocolatechip cookies. We hebben simpele recepten met bergen groenten, plantaardige eiwitten en frisse salades. En als je iets meer wilt weten over eten, koken of bepaalde producten druk dan op de informatie button. </p>
+       <p>Wist je dat er ook een prima zoekfunctie is en dat er af en toe combineersuggesties zijn, zodat je je maaltijd kan uitbreiden naar een feestmaal?</p>
+       <p>Start cooking!</p>
       </div>
     </div>
 
@@ -28,7 +34,7 @@
     </main>
 
     <footer>
-      Footer
+      &copy; 2017 - Lemon & Ginger
     </footer>
 
   </body>

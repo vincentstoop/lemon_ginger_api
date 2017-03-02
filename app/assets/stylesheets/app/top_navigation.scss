@@ -45,4 +45,8 @@ nav ul li:nth-child(1) {
     color: $link_color;
     text-decoration: none;
   }
+  nav a:hover {
+    color: $link_color_hover;
+    text-decoration: none;
+  }
 }
