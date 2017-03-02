@@ -1,2 +1,18 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<div class="categories-overview">
+  <div class="category-intro">
+    <h2>Categoriën</h2>
+    <p><%= link_to "+ Voeg nieuwe categorie toe", new_admin_category_path %></p>
+  </div>
+
+  <div class="categories-container">
+    <h2>Overzicht</h2>
+    <ul>
+    <% @categories.each do |category| %>
+        <li>
+          <p><%=link_to category.name, admin_category_path(category) %></p>
+          <p><%= link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Are you sure?" } %></p>
+        </li>
+    <% end %>
+  </ul>
+  </div>
+</div>
