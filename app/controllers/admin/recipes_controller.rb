@@ -59,7 +59,7 @@ class Admin::RecipesController < Admin::BaseController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :photo, :published, :featured, :week_recipe,
+    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, photos: [], :categories, :published, :featured, :week_recipe,
     ingredients_attributes: [:id, :product_id, :amount, :optional, :destroy], cooking_steps_attributes: [:title, :description, :cooking_time, :destroy])
   end
 
