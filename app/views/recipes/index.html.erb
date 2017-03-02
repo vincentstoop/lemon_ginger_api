@@ -4,7 +4,7 @@
   <% @recipes.each do |recipe| %>
       <div class="recipe-item">
         <% if recipe.photos.any? %>
-          <%= image_tag recipe.photos.first.image %>
+          <%= image_tag recipe.photos.first.image_url(:thumb) %>
         <% end %>
 
         <div class="overlay">

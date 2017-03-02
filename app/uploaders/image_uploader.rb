@@ -5,7 +5,7 @@ include CarrierWave::MiniMagick
 #   # end
 #
   version :thumb do
-    process resize_to_fit: [250, 250]
+    process resize_to_fill: [250, 250]
   end
 
   # Choose what kind of storage to use for this uploader:
