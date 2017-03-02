@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'recipes#index'
 
+  resources :pages, only: [:index]
+
   resources :recipes, only: [:index]
 
   namespace :api do
