@@ -43,6 +43,15 @@
       </div>
       </span>
     </div>
+
+    <label>Categories</label>
+    <div class="categories">
+      <%= f.collection_check_boxes(:category_ids, Category.all.order(:name), :id, :name) do |c| %>
+      <div class="form-group">
+        <%= c.check_box(class: "check_box") %> <%= c.object.name %>
+      </div>
+      <% end %>
+    </div>
   </section>
 
   <hr>

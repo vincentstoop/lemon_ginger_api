@@ -17,6 +17,7 @@ class Admin::RecipesController < Admin::BaseController
 
   def create
     @recipe = current_admin.recipes.new(recipe_params)
+    debugger
 
     if @recipe.save
       photo_params.each do |image|
@@ -59,8 +60,8 @@ class Admin::RecipesController < Admin::BaseController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :photos, :published, :featured, :week_recipe,
-    ingredients_attributes: [:id, :product_id, :amount, :optional, :destroy], cooking_steps_attributes: [:title, :description, :cooking_time, :destroy])
+    params.require(:recipe).permit(:title, :subtitle, :intro, :cooking_time, :persons, :published, :featured, :week_recipe,
+    ingredients_attributes: [:id, :product_id, :amount, :optional, :_destroy], cooking_steps_attributes: [:title, :description, :cooking_time, :_destroy], category_ids: [])
   end
 
   def photo_params
