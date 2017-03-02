@@ -2,10 +2,10 @@
   <% @photos.each do |photo| %>
     <div class="panel panel-default">
       <div class="panel-heading preview">
-        <%= image_tag photo.image.thumbnail %>
+        <%= image_tag photo.image_url(:thumb) %>
       </div>
       <div class="panel-body">
-        <%= link_to "Delete", photo, class: "btn btn-default", method: :delete, remote: true, data: { confirm: "Weet je het zeker?" } %>
+        <%= link_to "Delete", admin_photo_path(photo.id), class: "btn btn-default", method: :delete, remote: true, data: { confirm: "Weet je het zeker?" } %>
       </div>
     </div>
   <% end %>

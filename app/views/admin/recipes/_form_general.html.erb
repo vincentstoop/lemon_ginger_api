@@ -39,9 +39,13 @@
       <label>Photos</label>
       <div class="photos">
         <span class="btn btn-default">
-        <%= file_field :photos, type: :file, multiple: true %>
+          <%= file_field_tag "photos[]", type: :file, multiple: true %>
       </div>
       </span>
+
+      <div id="photos">
+        <%= render 'admin/photos/list' %>
+      </div>
     </div>
 
     <label>Categories</label>

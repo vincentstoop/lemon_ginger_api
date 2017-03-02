@@ -17,7 +17,6 @@ class Admin::RecipesController < Admin::BaseController
 
   def create
     @recipe = current_admin.recipes.new(recipe_params)
-    debugger
 
     if @recipe.save
       photo_params.each do |image|
@@ -35,13 +34,18 @@ class Admin::RecipesController < Admin::BaseController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @photos = @recipe.photos
   end
 
   def update
-    recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
 
-    if recipe.update(recipe_params)
-      redirect_to admin_recipes_path, notice: 'Recipe was updated.'
+    if @recipe.update(recipe_params)
+      photo_params.each do |image|
+        @recipe.photos.create(image: image)
+      end
+
+      redirect_to admin_recipe_path(@recipe), notice: 'Recipe was updated.'
     else
       render :edit
     end
