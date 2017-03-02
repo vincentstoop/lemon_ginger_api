@@ -1,0 +1,20 @@
+<div class="products-overview">
+  <div class="product-intro">
+    <h2>Ingrediënten</h2>
+    <p><%= link_to "+ Voeg nieuwe categorie toe", new_admin_product_path %></p>
+  </div>
+
+  <div class="products-container">
+    <h2>Overzicht</h2>
+    <ul>
+    <% @products.each do |product| %>
+        <li>
+          <p class="name"><%= link_to product.name, admin_product_path(product) %></p>
+          <p class="description"><%= product.description %></p>
+          <p class="edit"><%= link_to "Edit", edit_admin_product_path(product) %></p>
+          <p class="delete"><%= link_to "Delete", admin_product_path(product), method: :delete, data: { confirm: "Weet je het zeker?" } %></p>
+        </li>
+    <% end %>
+  </ul>
+  </div>
+</div>
