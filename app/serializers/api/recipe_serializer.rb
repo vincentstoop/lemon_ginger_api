@@ -1,5 +1,5 @@
 class Api::RecipeSerializer < ActiveModel::Serializer
-  attributes :id, :title, :subtitle, :cooking_time, :featured, :published, :intro
+  attributes :id, :title, :subtitle, :cooking_time, :featured, :published, :week_recipe, :intro
 
   has_many :categories
   has_many :ingredients
