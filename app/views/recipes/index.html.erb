@@ -9,8 +9,14 @@
 
         <div class="overlay">
           <h3><%= recipe.title %></h3>
-          <%= recipe.subtitle %>
+
+          <div class="overlaydetails">
+            <span class="cooking_time"><%= recipe.cooking_time %> min.</span>
+             &bull; <%= recipe.persons %> personen
+          </div>
+
         </div>
       </div>
   <% end %>
+
 </div>
