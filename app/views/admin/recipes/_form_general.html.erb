@@ -1,50 +1,53 @@
 <%= form_for [:admin, @recipe], html: { multipart: true } do |f| %>
 
-  <div class="form-group">
-    <h2>Algemeen</h2>
-  </div>
-
-  <div class="form-group">
-    <label>Titel</label>
-    <%= f.text_field :title, placeholder: "Recept naam", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <label>Ondertitel</label>
-    <%= f.text_field :subtitle, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <label>Beschrijving</label>
-    <%= f.text_area :intro, placeholder: "Type hier een korte omschrijving...", class: "form-control intro" %>
-  </div>
-
-  <div class="form-group time-person">
-    <div class="cooking-time">
-      <label>Bereidingstijd</label>
-        <div class="time">
-          <%= f.number_field :cooking_time, class: "form-control" %>
-          <span>minuten</span>
-        </div>
+  <section id="recipe-general">
+    <div class="form-group">
+      <h2>Algemeen</h2>
     </div>
-    <div class="amount-people">
-      <label>Aantal personen</label>
-        <div class="people">
-          <%= f.number_field :persons, class: "form-control" %>
-          <span>personen</span>
-        </div>
-    </div>
-  </div>
 
-  <div class="form-group">
-    <label>Photos</label>
-    <div class="photos">
-      <span class="btn btn-default">
-      <%= file_field :photos, type: :file, multiple: true %>
+    <div class="form-group">
+      <label>Titel</label>
+      <%= f.text_field :title, placeholder: "Recept naam", class: "form-control" %>
     </div>
-    </span>
-  </div>
+    <div class="form-group">
+      <label>Ondertitel</label>
+      <%= f.text_field :subtitle, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>Beschrijving</label>
+      <%= f.text_area :intro, placeholder: "Type hier een korte omschrijving...", class: "form-control intro" %>
+    </div>
+
+    <div class="form-group time-person">
+      <div class="cooking-time">
+        <label>Bereidingstijd</label>
+          <div class="time">
+            <%= f.number_field :cooking_time, class: "form-control" %>
+            <span>minuten</span>
+          </div>
+      </div>
+      <div class="amount-people">
+        <label>Aantal personen</label>
+          <div class="people">
+            <%= f.number_field :persons, class: "form-control" %>
+            <span>personen</span>
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Photos</label>
+      <div class="photos">
+        <span class="btn btn-default">
+        <%= file_field :photos, type: :file, multiple: true %>
+      </div>
+      </span>
+    </div>
+  </section>
 
   <hr>
 
+  <section id="recipe-ingredients">
     <div class="form-group">
       <h2>Ingrediënten</h2>
     </div>
@@ -55,36 +58,43 @@
         <%= link_to_add_association '+ Voeg ingrediënt toe', f, :ingredients, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
       <% end %>
     </div>
+  </section>
 
   <hr>
 
-  <div class="form-group">
-    <h2>Bereidingsstappen</h2>
-  </div>
+  <section id="recipe-cooking-steps">
+    <div class="form-group">
+      <h2>Bereidingsstappen</h2>
+    </div>
 
-  <div id="cookingsteps">
-    <%= f.fields_for :cooking_steps do |cookingstep| %>
-      <%= render 'cooking_step_fields', f: cookingstep %>
-      <%= link_to_add_association '+ Voeg stap toe', f, :cooking_steps, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
-    <% end %>
-  </div>
+    <div id="cookingsteps">
+      <%= f.fields_for :cooking_steps do |cookingstep| %>
+        <%= render 'cooking_step_fields', f: cookingstep %>
+        <%= link_to_add_association '+ Voeg stap toe', f, :cooking_steps, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
+      <% end %>
+    </div>
+  </section>
 
   <hr>
 
-  <div class="form-group">
-    <h2>Publicatie opties</h2>
-  </div>
+  <section id="recipe-publication-options">
+    <div class="form-group">
+      <h2>Publicatie opties</h2>
+    </div>
 
-  <div class="publication">
-    <div class="form-group">
-      <label>Publiceren?</label>
-      <%= f.check_box :published %>
+    <div class="publication">
+      <div class="form-group">
+        <label>Publiceren?</label>
+        <%= f.check_box :published %>
+      </div>
+      <div class="form-group">
+        <label>Featured?</label>
+        <%= f.check_box :featured %>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Featured?</label>
-      <%= f.check_box :featured %>
-    </div>
-  </div>
+  </section>
+
+  <hr>
 
   <div class="actions">
     <%= f.submit "Opslaan", class: "btn btn-primary btn-lg" %>

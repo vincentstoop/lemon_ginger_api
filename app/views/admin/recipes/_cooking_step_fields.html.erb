@@ -7,11 +7,16 @@
     <label>Beschrijving</label>
     <%= f.text_area :description, placeholder: "Type hier een korte omschrijving...", class: "form-control intro" %>
   </div>
-  <div class="form-group">
-    <label>Bereidingstijd</label>
+  <div class="form-group step">
     <div class="time cookingstep">
-    <%= f.number_field :cooking_time, class: "form-control" %>
-    <span>minuten</span>
-  </div>
+      <label>Bereidingstijd</label>
+      <div class="time">
+        <%= f.number_field :cooking_time, class: "form-control" %>
+        <span>minuten</span>
+      </div>
+    </div>
+    <div class="remove">
+      <%= link_to_remove_association "Verwijder", f %>
+    </div>
   </div>
 </div>

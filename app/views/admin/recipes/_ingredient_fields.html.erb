@@ -16,6 +16,8 @@
       <label>Optioneel?</label>
       <%= f.check_box :optional %>
     </div>
-    <%= link_to_remove_association "Verwijder ingrediënt", f %>
+    <div class="remove">
+      <%= link_to_remove_association "Verwijder", f %>
+    </div>
   </div>
 </div>
