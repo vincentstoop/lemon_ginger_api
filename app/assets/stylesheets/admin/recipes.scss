@@ -139,3 +139,12 @@ select {
   height: 34px;
   background-color: #fff;
 }
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  .form-group {
+    width: 25%;
+  }
+}
