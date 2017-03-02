@@ -3,7 +3,9 @@
 <div id="recipes-container">
   <% @recipes.each do |recipe| %>
       <div class="recipe-item">
-        <%= image_tag recipe.photos.first.image %>
+        <% if recipe.photos.any? %>
+          <%= image_tag recipe.photos.first.image %>
+        <% end %>
 
         <div class="overlay">
           <h3><%= recipe.title %></h3>
