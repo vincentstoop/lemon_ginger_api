@@ -145,6 +145,8 @@ select {
   flex-wrap: wrap;
   flex: 1;
   .form-group {
+    display: flex;
+    flex-direction: row;
     width: 25%;
   }
 }

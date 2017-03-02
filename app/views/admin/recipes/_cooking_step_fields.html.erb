@@ -11,7 +11,7 @@
     <div class="time cookingstep">
       <label>Bereidingstijd</label>
       <div class="time">
-        <%= f.number_field :cooking_time, class: "form-control" %>
+        <%= f.number_field :cooking_time, class: "form-control", min: 0 %>
         <span>minuten</span>
       </div>
     </div>
