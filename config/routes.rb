@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'recipes#index'
   get '/about', to: 'pages#about'
+  get '/admin', to: 'admin/recipes#index'
 
   resources :recipes, only: [:show, :index]
 
