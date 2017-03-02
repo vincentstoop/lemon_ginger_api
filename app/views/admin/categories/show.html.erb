@@ -1,2 +1,14 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="category-container">
+  <h2><%= @category.name %></h2>
+
+  <hr>
+
+  <h3>Recepten</h3>
+  <ul>
+    <% @category.recipes.each do |recipe| %>
+    <li>
+      <%= link_to recipe.title, admin_recipe_path(recipe) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
