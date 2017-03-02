@@ -28,7 +28,8 @@
   width: 100%;
   padding: 6px;
   position: absolute;
-  bottom: 0;
+  bottom: -12px;
+  margin: 0;
 }
 
 .overlaydetails {
@@ -41,8 +42,10 @@
   font-weight: bold;
 }
 
-.overlay h3 {
+h3 {
   margin: 0 0 3px 0;
+  font-family: 'Simonetta';
+  font-size: 20pt
 }
 
 .overlay a {
@@ -50,6 +53,17 @@
   color: $text-color;
 }
 
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $hr-color;
+  padding: 0;
+  width: 60%;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  text-align: center;
+}
 
 @media screen and (min-width: $breakpoint-medium) {
   #recipes-container {
