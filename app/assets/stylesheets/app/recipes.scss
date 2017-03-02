@@ -45,6 +45,11 @@
   margin: 0 0 3px 0;
 }
 
+.overlay a {
+  text-decoration: none;
+  color: $text-color;
+}
+
 
 @media screen and (min-width: $breakpoint-medium) {
   #recipes-container {
