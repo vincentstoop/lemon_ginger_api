@@ -3,6 +3,10 @@ class Admin::ProductsController < Admin::BaseController
     @products = Product.all
   end
 
+  def new
+    @product = Product.new  
+  end
+
   def create
     @product = Product.new(product_params)
 
@@ -11,6 +15,10 @@ class Admin::ProductsController < Admin::BaseController
     else
       redirect_to admin_products_path, alert: "Ingredient couldn't be saved."
     end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
   end
 
   def update

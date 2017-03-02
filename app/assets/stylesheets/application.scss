@@ -49,10 +49,28 @@ main {
   background-color: $bg-banner;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+#banner-text {
 }
 
 #banner p {
   line-height: 150%;
+}
+
+#recipes-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recipe-item {
+  -webkit-box-shadow: 2px 6px 22px -5px rgba(130,130,130,1);
+  -moz-box-shadow: 2px 6px 22px -5px rgba(130,130,130,1);
+  box-shadow: 2px 6px 22px -5px rgba(130,130,130,1);
+  border-radius: 4px;
 }
 
 footer {
@@ -82,32 +100,40 @@ footer {
 
   #banner {
     flex-direction: row;
+    justify-content: center;
+  }
+
+  #banner-text {
+    width: 45%;
+    margin-left: 2vw;
+  }
+
+  #banner img {
+    width: 30%;
   }
 
   #recipes-container {
-    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
   }
 
   .recipe-item {
-    width: 400px;
+    width: 350px;
+    height: 350px;
     background-color: #fff;
-    margin-bottom: 1vh;
-    position: relative;
+    margin-bottom: 3vh;
   }
 
   .recipe-item img {
     width: 100%;
+    position: relative;
+    border-radius: 4px;
   }
 
   .overlay {
-    position: absolute;
-    bottom: 0px;
     width: 100%;
-    background-color: rgba(255,255,255,0.8);
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
   }
 }
 
