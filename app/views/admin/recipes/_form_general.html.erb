@@ -55,8 +55,8 @@
     <div id="ingredients">
       <%= f.fields_for :ingredients do |ingredient| %>
         <%= render 'ingredient_fields', f: ingredient %>
-        <%= link_to_add_association '+ Voeg ingrediënt toe', f, :ingredients, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
       <% end %>
+      <%= link_to_add_association '+ Voeg ingrediënt toe', f, :ingredients, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
     </div>
   </section>
 
@@ -70,8 +70,8 @@
     <div id="cookingsteps">
       <%= f.fields_for :cooking_steps do |cookingstep| %>
         <%= render 'cooking_step_fields', f: cookingstep %>
-        <%= link_to_add_association '+ Voeg stap toe', f, :cooking_steps, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
       <% end %>
+      <%= link_to_add_association '+ Voeg stap toe', f, :cooking_steps, 'data-association-insertion-method': 'before', 'data-association-insertion-node': 'this' %>
     </div>
   </section>
 
