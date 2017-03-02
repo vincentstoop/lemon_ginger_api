@@ -1,9 +1,12 @@
 class ImageUploader < CarrierWave::Uploader::Base
-include CarrierWave::MiniMagick
-  # version :thumb do
-  #   process :resize_to_fill => [200,200]
-  # end
-
+# include CarrierWave::MiniMagick
+#   # version :thumb do
+#   #   process :resize_to_fill => [200,200]
+#   # end
+#
+#   version :thumb do
+#     process resize_to_fit: [350, 350]
+#   end
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -16,9 +19,6 @@ include CarrierWave::MiniMagick
   end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process resize_to_fit: [350, 350]
-  end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
