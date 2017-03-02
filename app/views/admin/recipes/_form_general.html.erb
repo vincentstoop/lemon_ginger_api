@@ -1,5 +1,7 @@
 <%= form_for [:admin, @recipe], html: { multipart: true } do |f| %>
-
+  <% @recipe.errors.full_messages.each do |msg| %>
+    <p class="Error"><%= msg %></p>
+  <% end %>
   <section id="recipe-general">
     <div class="form-group">
       <h2>Algemeen</h2>
