@@ -13,10 +13,11 @@ class Recipe < ApplicationRecord
   validates :title, presence: true
   validate :cooking_time_cannot_be_blank_and_a_number
   validates :category_ids, presence: true
+  validates :persons, presence: true, numericality: {only_integer: true}
 
   private
   def cooking_time_cannot_be_blank_and_a_number
-    if !cooking_time.present? #&& !(cooking_time.is_a? Integer)
+    if !cooking_time.present?
       errors.add(:cooking_time, "must be filled in, and a number")
     elsif !(cooking_time.is_a? Integer)
       errors.add(:cooking_time, "must be a number")
