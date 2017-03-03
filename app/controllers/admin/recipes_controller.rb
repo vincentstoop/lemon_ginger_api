@@ -23,7 +23,7 @@ class Admin::RecipesController < Admin::BaseController
         @recipe.photos.create(image: image)
       end
 
-      redirect_to admin_recipe_path(@recipe), notice: 'Recipe was added!'
+      redirect_to admin_recipe_path(@recipe), notice: 'Recept is toegevoegd!'
     else
       @recipe.ingredients.build
       @products = Product.all
@@ -45,7 +45,7 @@ class Admin::RecipesController < Admin::BaseController
         @recipe.photos.create(image: image)
       end
 
-      redirect_to admin_recipe_path(@recipe), notice: 'Recipe was updated.'
+      redirect_to admin_recipe_path(@recipe), notice: 'Recept is geüpdatet.'
     else
       render :edit
     end
@@ -55,9 +55,9 @@ class Admin::RecipesController < Admin::BaseController
     recipe = Recipe.find(params[:id])
 
     if recipe.destroy
-      redirect_to admin_recipes_path, notice: 'Recipe was deleted.'
+      redirect_to admin_recipes_path, notice: 'Recept is verwijderd.'
     else
-      redirect_to admin_recipes_path, alert: "Recipe couldn't be deleted."
+      redirect_to admin_recipes_path, alert: "Recept kon niet verwijderd worden."
     end
   end
 
