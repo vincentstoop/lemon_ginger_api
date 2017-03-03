@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
   get '/about', to: 'pages#about'
   get '/admin', to: 'admin/recipes#index'
+  get '/api/recipes/week', to: 'api/recipes#week'
 
   resources :recipes, only: [:show, :index]
 
