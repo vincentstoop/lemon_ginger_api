@@ -47,3 +47,4 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'active_model_serializers', '~> 0.10.4'
 gem 'cocoon'
+gem 'rails_12factor', group: :production
