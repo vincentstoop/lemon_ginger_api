@@ -26,7 +26,7 @@ body {
   color: $text-color;
   font-family: 'Source Sans Pro', sans-serif;
   letter-spacing: 1.18pt;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 header {
@@ -94,7 +94,11 @@ main {
 
 #banner {
   min-height: 42vh;
+  background-image: url(http://res.cloudinary.com/dyl4vtost/image/upload/v1488539226/dominik-martin-327_1_a47uze.jpg);
+  background-position-x: 100%;
+  background-position-y: 50%;
   background-color: $bg-banner;
+  background-size: 1800px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -111,8 +115,17 @@ main {
 #banner-text {
 }
 
+#banner h2 {
+  color: #1A8696;
+}
+
 #banner p {
+  color: $text-color;
   line-height: 150%;
+}
+
+.appstore {
+  text-align: right;
 }
 
 
@@ -145,12 +158,12 @@ footer {
 
   #banner {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   #banner-text {
-    width: 45%;
-    margin-left: 2vw;
+    width: 35%;
+    margin-right: 5vw;
   }
 
   #banner img {
