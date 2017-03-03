@@ -1,7 +1,26 @@
+<% if notice.present? %>
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <%= notice %>
+</div>
+<% end %>
+<% if alert.present? %>
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <%= alert %>
+</div>
+<% end %>
+
 <%= form_for [:admin, @recipe], html: { multipart: true } do |f| %>
-  <% @recipe.errors.full_messages.each do |msg| %>
-    <p class="Error"><%= msg %></p>
+<% if @recipe.errors.any? %>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= msg %>
+      </div>
+    <% end %>
   <% end %>
+
   <section id="recipe-general">
     <div class="form-group">
       <h2>Algemeen</h2>
