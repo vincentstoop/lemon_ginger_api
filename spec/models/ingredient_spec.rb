@@ -1,5 +1,5 @@
 require 'rails_helper'
 
 describe Ingredient do
-  it { is_expected.to have_and_belong_to_many(:recipes) }
+  it { is_expected.to belong_to(:recipe) }
 end
