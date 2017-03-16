@@ -87,6 +87,11 @@ GEM
     erubi (1.5.0)
     excon (0.55.0)
     execjs (2.7.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
+      railties (>= 3.0.0)
     ffi (1.9.17)
     fog-aws (1.2.0)
       fog-core (~> 1.38)
@@ -252,6 +257,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   devise
+  factory_girl_rails
   fog-aws
   jbuilder (~> 2.5)
   jquery-rails
